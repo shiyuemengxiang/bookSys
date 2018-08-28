@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>修改--图书管理系统</title>
+</head>
+<body>
+<h1>确认删除以下图书信息?</h1>
+<form action="/dorm" method="get">
+    <p>图书 _id:
+        <input type="text" readonly = "readonly"  name="_id" value="<%=result[0]._id%>">
+    </p>
+    <p><label for="">图书名称:</label>
+    <input type="text" name="name" disabled required value="<%=result[0].name%>">  <font color="red">*</font>
+        <%result[0].name%>
+    </p>
+    <p><label for="">图书价格:</label>
+        <input type="text" name="price"  disabled required value="<%=result[0].price%>"> <font color="red">*</font>
+    </p>
+    <p><label for="">图书作者:</label>
+        <input type="text" name="author" disabled  required value="<%=result[0].author%>"> <font color="red">*</font>
+    </p>
+    <p><label for="">图书语言:</label>
+        <input type="text" name="lang" disabled value="<%=result[0].lang%>">
+    </p>
+    <button type="submit">确认删除</button>
+</form>
+</body>
+</html>

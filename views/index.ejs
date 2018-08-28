@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>首页--图书信息管理</title>
+</head>
+<body>
+<a href="/add">添加图书</a>
+    <table border="1">
+        <thead>
+            <th>图书名称</th>
+            <th>图书作者</th>
+            <th>图书价格</th>
+            <th>图书语言</th>
+            <th>操作</th>
+        </thead>
+        <tbody>
+        <%for(var i=0;i<result.length;i++){%>
+            <tr> <td><%=result[i].name%></td> <td><%=result[i].author%></td> <td><%=result[i].price%></td> <td><%=result[i].lang%></td> <td><a href="/edit?_id=<%=result[i]._id%>">修改</a> <a href="/remove?_id=<%=result[i]._id%>">删除</a></td></tr>
+        <%}%>
+        </tbody>
+    </table>
+</body>
+</html>
